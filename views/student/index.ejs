@@ -1,0 +1,50 @@
+<div class="container student-table my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+
+            <a href="/student/create" class="btn btn-primary btn-sm">Add New Students</a>
+            <a href="/student/unvarifyed" class="btn btn-danger btn-sm">Unverifyed Students</a>
+            <br>
+            <br>
+
+            <div class="card shadow">
+                <div class="card-header">
+                    <h2 class="text-center">All Varifyed Students</h2>
+                </div>
+            </div>
+        </div>
+
+        <% students.forEach((student , index) => { %>
+
+            <div class="col-md-3 my-5">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="user-info">
+
+                            <% if (student.photo == "avater.png") { %>
+                                <img src="/img/<%= student.photo %>" alt="">
+                                <% } else { %>
+                                    <img src="/img/students/<%= student.photo %>" alt="">
+                                    <% } %>
+                                        <p class="my-3">Id :
+                                            <%= index + 1 %>
+                                        </p>
+                                        <h2>
+                                            <%= student.name %>
+                                        </h2>
+                                        <P>Cell :
+                                            <%= student.cell %>
+                                        </P>
+                                        <hr>
+                                        <a href="/student/<%= student.id %>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                                        <a href="/student/edit/<%= student.id %>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+
+                                        <a href="/student/delete/<%= student.id %>" class="btn btn-danger btn-sm delete-btn"><i class="fas fa-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% }) %>
+    </div>
+</div>

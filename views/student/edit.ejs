@@ -1,0 +1,66 @@
+<div class="container student-form my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+
+            <a href="/student" class="btn btn-primary btn-sm">Back</a>
+            <br>
+            <br>
+
+            <div class="card shadow">
+                <div class="card-header">
+                    <h2 class="text-center">Update
+                        <%= student.name %> Data</h2>
+                </div>
+                <div class="card-body">
+
+                    <form action="/student/update/<%= student.id %>" method="post" enctype="multipart/form-data">
+
+                        <div class="my-3">
+                            <label for="">Name</label>
+                            <input name="name" value="<%= student.name %> " type="text" class="form-control">
+                        </div>
+                        <div class="my-3">
+                            <label for="">Email</label>
+                            <input name="email" value="<%= student.email %> " type="text" class="form-control">
+                        </div>
+                        <div class="my-3">
+                            <label for="">Cell</label>
+                            <input name="cell" value="<%= student.cell %> " type="text" class="form-control">
+                        </div>
+                        <div class="my-3">
+                            <label for="">Location</label>
+                            <select name="location" id="" class="form-control">
+                                <option value="">-Select-</option>
+                                <option <% if (student.location == "Uttora") { %> selected <% } %> value="Uttora">Uttora</option>
+                                <option <% if (student.location == "Gulshan") { %> selected <% } %>  value="Gulshan">Gulshan</option>
+                                <option <% if (student.location == "Badda") { %> selected <% } %>  value="Badda">Badda</option>
+                                <option <% if (student.location == "Mirpur") { %> selected <% } %>  value="Mirpur">Mirpur</option>
+                                <option <% if (student.location == "Patuakhali") { %> selected <% } %>  value="Patuakhali">Patuakhali</option>
+                            </select>
+                        </div>
+                        <div class="my-3">
+                            <label for="">Photo</label>
+                            <br>
+                            <% if (student.photo == "avater.png") { %>
+                                <img class="preload_photo" src="/img/<%= student.photo %> " alt="">
+                                <% } else { %>
+                                    <img class="preload_photo" src="/img/students/<%= student.photo %> " alt="">
+                                    <% } %>
+                                        <br>
+                                        <label for="upload-student-photo">
+                                <img src="https://freeiconshop.com/wp-content/uploads/edd/image-outline-filled.png" alt="">
+                            </label>
+                                        <input type="file" name="student-photo" id="upload-student-photo">
+                                        <!-- <input  type="file" class="" id="upload-student-photo" multiple> -->
+                        </div>
+                        <div class="my-3">
+                            <input type="submit" class="btn btn-primary w-100" value="Update Now">
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

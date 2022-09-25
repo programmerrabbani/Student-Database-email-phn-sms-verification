@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Uncial Antiqua', cursive;
+}
+
+.student-table img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.student-form label img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.student-form input[type="file"] {
+    display: none;
+}
+
+.preload_photo {
+    max-width: 100%;
+}
+
+.student-single {
+    text-align: center;
+}
+
+.student-single img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 50px auto;
+}
+
+.user-info {
+    text-align: center;
+}
+
+.user-info h2 {
+    font-size: 22px;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+
+.user-info img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.lodaing {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 200px;
+    width: 200px;
+    display: none;
+}
